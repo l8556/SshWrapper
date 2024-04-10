@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ssh-wrapper"
+version = "0.1.0"
+description = ""
+authors = ["l02 <l8556@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+paramiko = "^3.4.0"
+rich = "^13.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
