@@ -5,7 +5,7 @@ from functools import wraps
 import paramiko
 from paramiko.client import SSHClient
 
-from ..server_data import ServerData
+from ssh_wrapper.data.server_data import ServerData
 from ..logger import log_out
 from ..exceptions import SshException
 

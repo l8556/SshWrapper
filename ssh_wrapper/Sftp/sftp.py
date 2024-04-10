@@ -6,7 +6,7 @@ from os.path import exists, basename
 from posixpath import join
 
 from ..connection import Connection
-from ..server_data import ServerData
+from ssh_wrapper.data.server_data import ServerData
 from ..logger import log_out
 from ..exceptions import SftpExceptions
 

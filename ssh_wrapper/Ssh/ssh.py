@@ -3,9 +3,9 @@ from functools import wraps
 
 from .channel import Channel
 from ..connection import Connection
-from ..server_data import ServerData
+from ssh_wrapper.data.server_data import ServerData
 from ..exceptions import SshException
-from ..command_output import CommandOutput
+from ssh_wrapper.data.command_output import CommandOutput
 
 
 def connected_ssh_client_only(func):
