@@ -3,9 +3,8 @@ from functools import wraps
 
 from .channel import Channel
 from ..connection import Connection
-from ssh_wrapper.data.server_data import ServerData
+from ..data import ServerData, CommandOutput
 from ..exceptions import SshException
-from ssh_wrapper.data.command_output import CommandOutput
 
 
 def connected_ssh_client_only(func):

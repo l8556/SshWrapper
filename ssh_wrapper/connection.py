@@ -4,7 +4,7 @@ import time
 import paramiko
 from paramiko.client import SSHClient, AutoAddPolicy
 
-from ssh_wrapper.data.server_data import ServerData
+from .data import ServerData
 from .logger import log_out
 
 

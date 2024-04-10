@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from rich import print
 
-from ssh_wrapper.data.server_data import ServerData
+from .data import ServerData
 
 
 def log_out(msg: str, server: ServerData, log_type: str, color: str = None, stdout = True) -> None:
