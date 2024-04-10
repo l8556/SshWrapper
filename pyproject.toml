@@ -7,8 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-paramiko = "^3.4.0"
-rich = "^13.7.1"
+paramiko = "^3"
+rich = "^13"
 
 
 [build-system]
