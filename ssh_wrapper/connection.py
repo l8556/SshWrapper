@@ -29,7 +29,7 @@ class Connection:
                 self._handle_error(f'SSH error: {e}')
                 continue
 
-            except ConnectionError as e:
+            except (ConnectionError, paramiko.ssh_exception.NoValidConnectionsError) as e:
                 self._handle_error(f"Connection Error: {e}")
                 continue
 
