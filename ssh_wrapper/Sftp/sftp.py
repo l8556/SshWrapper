@@ -4,6 +4,7 @@ import stat
 from functools import wraps
 from os.path import exists, basename
 from posixpath import join
+from scp import SCPClient
 
 from ..connection import Connection
 from ..data import ServerData
@@ -103,6 +104,24 @@ class Sftp:
         if stat.S_ISDIR(self.client.lstat(remote).st_mode):
             return self.download_dir(remote, local, stdout)
         return self.download_file(remote, local, stdout)
+
+    @connected_sftp_only
+    def download_dir_scp(self, remote: str, local: str, stdout: bool = False, recursive: bool = True):
+        """
+        Download a directory from the remote server to the local machine using SCP.
+
+        :param remote: Path to the remote directory to download.
+        :param local: Path to the local directory to save the downloaded content.
+        :param stdout: Whether to print logs to standard output. Defaults to False.
+        :param recursive: Whether to download directories recursively. Defaults to True.
+        """
+        log_out(f'Downloading dir via scp: {remote} to {local}', self.server, log_type='info', stdout=stdout)
+
+        os.makedirs(local, exist_ok=True)
+
+        with SCPClient(self.connection.client.get_transport()) as scp:
+            scp.get(remote_path=remote, local_path=local, recursive=recursive)
+
 
     @connected_sftp_only
     def download_dir(self, remote: str, local: str, stdout: bool = False):
