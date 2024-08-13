@@ -10,7 +10,6 @@ python = "^3.11"
 paramiko = "^3"
 rich = "^13"
 cryptography = '^42.0.0'
-scp = "^0.15.0"
 
 [build-system]
 requires = ["poetry-core"]
