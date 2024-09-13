@@ -33,6 +33,13 @@ class Connection:
                 self._handle_error(f"Connection Error: {e}")
                 continue
 
+            except OSError as osError:
+                if osError.winerror == 10060:
+                    self._handle_error("Network error: Server response time exceeded (WinError 10060).")
+                else:
+                    self._handle_error(f"Network error: {osError}")
+                continue
+
     def connection_check(self) -> bool:
         return self.__connected
 
