@@ -87,7 +87,12 @@ class Sftp:
         if not exists(local):
             raise FileNotFoundError(f"|{self.server.custom_name}|{self.server.ip}|Local file does not exist: {local}")
 
-        log_out(f'Uploading file: {basename(local)} to {remote}', self.server, log_type='info', stdout=stdout)
+        log_out(
+            f'Uploading file: [cyan]{local}[/] to [cyan]{remote}[/]',
+            self.server,
+            log_type='info',
+            stdout=stdout
+        )
 
         self.client.put(localpath=local, remotepath=remote, confirm=True)
 
@@ -117,7 +122,12 @@ class Sftp:
         if not stat.S_ISDIR(self.client.lstat(remote).st_mode):
             raise SftpExceptions(f"|ERROR| Remote object is not a directory: {remote}")
 
-        log_out(f'Downloading dir: {remote} to {local}', self.server, log_type='info', stdout=stdout)
+        log_out(
+            f'Downloading dir: [cyan]{remote}[/] to [cyan]{local}[/]',
+            self.server,
+            log_type='info',
+            stdout=stdout
+        )
 
         os.makedirs(local, exist_ok=True)
 
@@ -139,6 +149,12 @@ class Sftp:
         :param local: The local path where the file will be downloaded.
         :param stdout: Whether to log output to stdout. Defaults to False.
         """
-        log_out(f'Downloading file: {remote} to {local}', self.server, log_type='info', stdout=stdout)
+        log_out(
+            f'Downloading file: [cyan]{remote}[/] to [cyan]{local}[/]',
+            self.server,
+            log_type='info',
+            stdout=stdout
+        )
+
         os.makedirs(os.path.dirname(local), exist_ok=True)
         self.client.get(remotepath=remote, localpath=local)
