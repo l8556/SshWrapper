@@ -88,7 +88,10 @@ class Sftp:
             raise FileNotFoundError(f"|{self.server.custom_name}|{self.server.ip}|Local file does not exist: {local}")
 
         log_out(
-            f'Uploading file: [cyan]{local}[/] to [cyan]{remote}[/]', self.server, log_type='info', stdout=stdout
+            f'Uploading file: [cyan]{local}[/] to [cyan]{remote}[/]',
+            self.server,
+            log_type='info',
+            stdout=stdout
         )
 
         self.client.put(localpath=local, remotepath=remote, confirm=True)
