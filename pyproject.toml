@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 paramiko = "^3"
 rich = "^13"
-cryptography = '^44.0.0'
+cryptography = '^44.0.1'
 
 [build-system]
 requires = ["poetry-core"]
