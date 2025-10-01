@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-paramiko = "^3"
+paramiko = "^4"
 rich = "^14"
 cryptography = '^46.0.2'
 
