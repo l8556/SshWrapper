@@ -6,7 +6,7 @@ authors = [{ name = "l02", email = "l8556@outlook.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "paramiko>=5,<6.0.0",
+    "paramiko>=5.1.0,<6.0.0",
     "rich>=15,<16",
     "cryptography>=50.0.2,<51.0.0",
 ]
